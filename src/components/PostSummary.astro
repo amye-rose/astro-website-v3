@@ -1,0 +1,13 @@
+---
+const { title, url, date, description, tags } = Astro.props;
+---
+<section>
+    <h1><a href={url}>{title}</a></h1>
+    <span><strong>Published: </strong>{date}</span>
+    <p>{description}</p>
+    <div id="tags">
+        {tags.map((tag: any) => ( 
+            <a href={`/tags/${tag}`}>{tag}</a>
+        ))}
+    </div>
+</section>

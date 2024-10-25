@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "Anonymous Pro";
+    src: url("../fonts/AnonymousPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Anonymous Pro";
+    src: url("../fonts/AnonymousPro-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Anonymous Pro";
+    src: url("../fonts/AnonymousPro-Italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Anonymous Pro";
+    src: url("../fonts/AnonymousPro-BoldItalic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    --widthContent: 680px;
+
+    --colorBackground: #f9f5d7;
+    --colorForeground: #282828;
+    --colorSecondary: #f2e5bc;
+}
+
+body {
+    background-color: var(--colorBackground);
+    color: var(--colorForeground);
+    font-family: "Anonymous Pro";
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+main {
+    max-width: calc(var(--widthContent) + 1em);
+    min-height: 100vh;
+    padding: 0 2rem;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main > .content {
+    flex-grow: 1;
+}
+
+header {
+    
+}
+
+footer {
+
+}
+
+/*  Navigation */
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    align-self: center;
+}
+
+/* Tags */
+
+#tags::before {
+    content: "\f02b";
+    font-family: FontAwesome
+}
+
+#tags a {
+    margin-right: 7.5px;
+}
+
+#tags a:last-child {
+    margin-right: 0;
+}

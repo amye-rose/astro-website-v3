@@ -1,16 +1,23 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostSummary from "../components/PostSummary.astro";
+const pageTitle = "Home"
+const allPosts = await Astro.glob("./posts/*.md")
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<section>
+		<h1>Header</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum qui dolor ipsa quis, nihil veniam ea iure distinctio minus voluptatibus magnam, sed officia modi a soluta asperiores nesciunt dignissimos neque.
+		</p>
+	</section>
+	<div>
+		{allPosts.map((post) => <PostSummary 
+			title = {post.frontmatter.title}
+			url = {post.url}
+			date = {post.frontmatter.date}
+			description = {post.frontmatter.description}
+			tags = {post.frontmatter.tags}
+		/>)}
+	</div>
+</BaseLayout>
